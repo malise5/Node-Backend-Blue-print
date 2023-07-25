@@ -29,7 +29,7 @@ app.use(morgan("dev"));
 app.use(errorMiddleware);
 
 // ProductS
-app.use("/products", productRoute);
+app.use("/api/products", productRoute);
 
 // Database Connection
 mongoose.set("strictQuery", false);
