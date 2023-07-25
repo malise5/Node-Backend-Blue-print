@@ -3,20 +3,26 @@ const express = require("express");
 const mongoose = require("mongoose");
 const productRoute = require("./routers/productsRoutes");
 const morgan = require("morgan");
+const cors = require("cors");
 const errorMiddleware = require("./middleware/errorMiddleware");
 
 const app = express();
 
 const port = process.env.PORT || 8000;
 const MONGO_URL = process.env.MONGO_URL;
+// const FRONTEND = process.env.FRONTEND
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
-    res.send("Welcome");
-});
+//for specific website
+// const corsOption = {
+//     origin: 'https://127.0.0.1:5173' // FRONTEND ,
+//     optionsSuccessStatus: 200
+// }
+// app.use(cors(corsOption));
 
+app.use(cors());
 app.use(morgan("dev"));
 
 //errorMiddleware
