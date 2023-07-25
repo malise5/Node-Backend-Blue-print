@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 //     origin: 'https://127.0.0.1:5173' // FRONTEND ,
 //     optionsSuccessStatus: 200
 // }
-// app.use(cors(corsOption));
+// app.use(cors(corsOption))
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -29,7 +29,7 @@ app.use(morgan("dev"));
 app.use(errorMiddleware);
 
 // ProductS
-app.use("/api/v1/products", productRoute);
+app.use("/products", productRoute);
 
 // Database Connection
 mongoose.set("strictQuery", false);
