@@ -2,7 +2,7 @@ const express = require("express");
 const {
     getProducts,
     getProductsById,
-    createProducts,
+    createProduct,
     updateProduct,
     deleteProduct,
 } = require("../controllers/productController");
@@ -16,7 +16,7 @@ router.get("/", getProducts);
 router.get("/:id", getProductsById);
 
 // Create data
-router.post("/", createProducts);
+router.post("/", createProduct);
 
 // Edit products
 router.put("/:id", updateProduct);
